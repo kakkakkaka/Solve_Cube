@@ -11,3 +11,4 @@ int Color_To_Int(char ch);
 int Power_Two(int element);
 StandardCube Cube_To_Standard(Cube bcube);
 Cube Rotate_Clockwise(Cube bcube, int element);
+Cube Rotate_Anti_Clockwise(Cube bcube, int element);
