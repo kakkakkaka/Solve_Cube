@@ -21,3 +21,5 @@ YELLOW * BLUE * RED * GREEN * ORANGE * WHITE
 40  :   RW
 48  :   OW
 34  :   BW
+
+In all test case, I choose Red is front and Yellow is top

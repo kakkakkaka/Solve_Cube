@@ -73,10 +73,10 @@ Cube Rotate_Clockwise(Cube bcube, int element) {
     int i, j;
     for (i=0; i<6; i++)
     {
-        result.color[element][i] = result.color[element][i+2];
+        result.color[element][i+2] = bcube.color[element][i];
     }
-    result.color[element][6] = bcube.color[element][0];
-    result.color[element][7] = bcube.color[element][1];
+    result.color[element][0] = bcube.color[element][6];
+    result.color[element][1] = bcube.color[element][7];
     switch(element)
     {
         case 0 :    arr[0][0] = 1; arr[1][0] = 4; arr[2][0] = 3; arr[3][0] = 2;
@@ -126,10 +126,10 @@ Cube Rotate_Anti_Clockwise(Cube bcube, int element) {
     int i, j;
     for (i=0; i<6; i++)
     {
-        result.color[element][i+2] = result.color[element][i];
+        result.color[element][i] = bcube.color[element][i+2];
     }
-    result.color[element][0] = bcube.color[element][6];
-    result.color[element][1] = bcube.color[element][7];
+    result.color[element][6] = bcube.color[element][0];
+    result.color[element][7] = bcube.color[element][1];
     switch(element)
     {
         case 0 :    arr[0][0] = 1; arr[1][0] = 2; arr[2][0] = 3; arr[3][0] = 4;

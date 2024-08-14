@@ -7,6 +7,13 @@ struct StandardCube {
     int edge[12];
 };
 
+struct Step {
+   int position; //2: Double, 1: ClockWise, -1: Anti
+   int status; 
+   /*status =  {0: UP, 1: LEFT, 2: FRONT,
+                3: RIGHT, 4: BEHIND, 5: DOWN}*/
+};
+
 int Color_To_Int(char ch);
 int Power_Two(int element);
 StandardCube Cube_To_Standard(Cube bcube);
