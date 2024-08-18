@@ -1,6 +1,7 @@
 #include<iostream>
 #include"type_cube.h"
 #include"method.h"
+#include"solve_edge.h"
 #include<stdio.h>
 
 using namespace std;
@@ -18,14 +19,14 @@ Cube original_Cube = {
 Cube input_Cube;
 
 StandardCube original_StandardCube = Cube_To_Standard(original_Cube);
+StandardCube input_StandardCube;
 
-int arr1[20] = {2, -1, 2, -1, 2, -1, -1, 2, 1, 1, 2, 2, 2, 2, -1, -1, -1, 1, -1};
-    int arr2[20] = {4,  5, 3,  2, 5,  0,  3, 2, 3, 0, 1, 2, 3, 0,  4,  5,  2, 0,  1};
-
+Edge arr[12][13];
 
 int main() {
-    int i, j, k;
-    freopen("test_case/testcase2.txt", "r", stdin);
+    int i, j;
+    int num_arr_row, num_arr_col;
+    freopen("test_case/testcase5.txt", "r", stdin);
     for (i=0; i<6; i++)
     {
         for (j=0; j<8; j++)
@@ -33,32 +34,29 @@ int main() {
             cin >> input_Cube.color[i][j];
         }
     }
+    input_StandardCube = Cube_To_Standard(input_Cube);
 
-    Cube result = original_Cube;
-    for (i=0; i<20; i++)
+    num_arr_row = Find_Edge_Loop(arr, original_Cube, input_Cube);
+    for (i=0; i<num_arr_row; i++)
     {
-        if (arr1[i] == -1)
+        num_arr_col = 0;
+        while (arr[i][num_arr_col].c1_color != -1)
         {
-            result = Rotate_Anti_Clockwise(result, arr2[i]);
-        }
-        else if (arr1[i] == 1)
-        {
-            result = Rotate_Clockwise(result, arr2[i]);
-        }
-        else if (arr1[i] == 2)
-        {
-            result = Rotate_Clockwise(result, arr2[i]);
-            result = Rotate_Clockwise(result, arr2[i]);
-        }
-    }
-
-    for (i=0; i<6; i++)
-    {
-        for (j=0; j<8; j++)
-        {
-            cout << result.color[i][j];
+            cout << input_Cube.color[arr[i][num_arr_col].c1_color][arr[i][num_arr_col].c1_location];
+            cout << input_Cube.color[arr[i][num_arr_col].c2_color][arr[i][num_arr_col].c2_location] << ' ';
+            num_arr_col++;
         }
         cout << '\n';
     }
-    return 0;
+
+    // cout << "Concer" << '\n';
+    // for (i=0; i<8; i++)
+    // {
+    //     cout << original_StandardCube.concer[i] << '\n';
+    // }
+    // cout << "Edge" << '\n';
+    // for (i=0; i<12; i++)
+    // {
+    //     cout << original_StandardCube.edge[i] << '\n';
+    // }
 }

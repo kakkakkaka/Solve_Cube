@@ -7,6 +7,13 @@ struct StandardCube {
     int edge[12];
 };
 
+struct Edge {
+    int c1_color;
+    int c1_location;
+    int c2_color;
+    int c2_location;
+};
+
 struct Step {
    int position; //2: Double, 1: ClockWise, -1: Anti
    int status; 
