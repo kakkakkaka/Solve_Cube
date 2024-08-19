@@ -4,18 +4,23 @@
     int arr2[20] = {1, 2, 0, 1,  4, 0, 3, 0, 2, 0,  4,  2, 1,  4, 2, 5, 3,  5, 0, 3};
         Edge: (YB-BW-WR-OW-RB-RG-WG-GY-BY) (Bi lat)
                 (YR-OY-GO-OB-RY)            (Bi lat)
+        Concer: True
 
 2: R U2 R' F2 L2 D2 L' U2 F2 D B L F' D' B2 L' D' U'
     // postition ; status
     int arr1[20] = {1, 2, -1, 2, 2, 2, -1, 2, 2, 1, 1, 1, -1, -1, 2, -1, -1, -1};
     int arr2[20] = {3, 0,  3, 2, 1, 5,  1, 0, 2, 5, 4, 1,  2,  5, 4,  1,  5,  0};
         Edge: (GW-OG-YO-OB-RW-WB-YR-OW-RG-BY-BR-YG-GW) (Khong lat)
+        Concer: (OGW-YBR-RGY-OBY-GWO)
+                (WBO-GOY-BOY)
+                (RBW-GRW-BWR)
 
 3: F2 R U' B' L F' L2 B U2 R' F2 D' F2 L' F' U R2 D2
     // postition ; status
     int arr1[20] = {2, 1, -1, -1, 1, -1, 2, 1, 2, -1, 2, -1, 2, -1, -1, 1, 2, 2};
     int arr2[20] = {2, 3,  0,  4, 1,  2, 1, 4, 0,  3, 2,  5, 2,  1,  2, 0, 3, 5};
         Edge: (YB-GR-GO-OY-BW-WG-OB-WR-OW-RB-YR-YG-YB) (Khong lat)
+        Concer: (BRY-RBW-RWG-GWO-GOY-GYR-BOW-YOB-BRY)
 
 4: U2 B2 D L2 B2 D' L2 F2 R2 D2 L F' U R' D2 F' L F U'
     // postition ; status
@@ -25,6 +30,10 @@
                 (OG-YR-YB-OG)       (Khong lat)
                 (RG-WG-RG)          (Khong lat)
                 (BW-WO-BW)          (Khong lat)
+        Concer: (OBY-BYO)
+                (BOW-GRY-YOG-BWO)
+                (WOG-BWR-RYB-GWO)
+                (GWR-RGW)
 
 5: R' F2 L2 B U F2 U' R D B2 D' F2 L2 R2 D' F R2 D U'
     // postition ; status
@@ -34,6 +43,8 @@
                 (OB-RG-RB-BO)       (Bi lat)
                 (OG)                  (Bi lat)
                 WB, WR              (Da dung)
+        Concer: (YBR-BWR-GYR-YOB-YBR)
+                (GWO-OWB-GOY-WOG-RWG-GRW)
         
 
 6: B2 D' R2 F' D2 U' R' F2 R U L2 F2 R2 U2 B' D' F' U L'
@@ -41,9 +52,16 @@
     int arr1[20] = {2, -1, 2, -1, 2, -1, -1, 2, 1, 1, 2, 2, 2, 2, -1, -1, -1, 1, -1};
     int arr2[20] = {4,  5, 3,  2, 5,  0,  3, 2, 3, 0, 1, 2, 3, 0,  4,  5,  2, 0,  1};
         Edge: (OB-GR-YO-WR-WG-GO-YB-OW-BW-BR-YR-YG-OB) (Khong lat)
+        Concer: (RBW-RGY-BRY-RWG-OBY-BWR)
+                (WOG-OYG-GWO)
+                (WBO-WBO)
 
 
 Mat vang truoc
+Ja : 1;
+Jb : 2;
+T  : 3; 
+Y  : 4;
 
 Edge : (Choose the side of edge in Y interface)
     Y3 G1        YG
@@ -58,7 +76,6 @@ Edge : (Choose the side of edge in Y interface)
     W5 O5        WO (W: D, L2; T            O: B', L, B; T)
     W7 B5        WB (W: L2, T               B: D, R, F2, R'; Jb)
     W1 R5        WR (W: D', L2; T           R: F, L', F'; T)
-
 Edge
 17  YO
 9   YG
