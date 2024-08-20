@@ -4,23 +4,21 @@
     int arr2[20] = {1, 2, 0, 1,  4, 0, 3, 0, 2, 0,  4,  2, 1,  4, 2, 5, 3,  5, 0, 3};
         Edge: (YB-BW-WR-OW-RB-RG-WG-GY-BY) (Bi lat)
                 (YR-OY-GO-OB-RY)            (Bi lat)
-        Concer: True
+        Concer: True 
 
 2: R U2 R' F2 L2 D2 L' U2 F2 D B L F' D' B2 L' D' U'
     // postition ; status
     int arr1[20] = {1, 2, -1, 2, 2, 2, -1, 2, 2, 1, 1, 1, -1, -1, 2, -1, -1, -1};
     int arr2[20] = {3, 0,  3, 2, 1, 5,  1, 0, 2, 5, 4, 1,  2,  5, 4,  1,  5,  0};
         Edge: (GW-OG-YO-OB-RW-WB-YR-OW-RG-BY-BR-YG-GW) (Khong lat)
-        Concer: (OGW-YBR-RGY-OBY-GWO)
-                (WBO-GOY-BOY)
-                (RBW-GRW-BWR)
+        Concer: Need to recalculate
 
 3: F2 R U' B' L F' L2 B U2 R' F2 D' F2 L' F' U R2 D2
     // postition ; status
     int arr1[20] = {2, 1, -1, -1, 1, -1, 2, 1, 2, -1, 2, -1, 2, -1, -1, 1, 2, 2};
     int arr2[20] = {2, 3,  0,  4, 1,  2, 1, 4, 0,  3, 2,  5, 2,  1,  2, 0, 3, 5};
         Edge: (YB-GR-GO-OY-BW-WG-OB-WR-OW-RB-YR-YG-YB) (Khong lat)
-        Concer: (BRY-RBW-RWG-GWO-GOY-GYR-BOW-YOB-BRY)
+        Concer: Need to recalculate
 
 4: U2 B2 D L2 B2 D' L2 F2 R2 D2 L F' U R' D2 F' L F U'
     // postition ; status
@@ -43,8 +41,7 @@
                 (OB-RG-RB-BO)       (Bi lat)
                 (OG)                  (Bi lat)
                 WB, WR              (Da dung)
-        Concer: (YBR-BWR-GYR-YOB-YBR)
-                (GWO-OWB-GOY-WOG-RWG-GRW)
+        Concer: need to recalculate
         
 
 6: B2 D' R2 F' D2 U' R' F2 R U L2 F2 R2 U2 B' D' F' U L'
@@ -52,9 +49,7 @@
     int arr1[20] = {2, -1, 2, -1, 2, -1, -1, 2, 1, 1, 2, 2, 2, 2, -1, -1, -1, 1, -1};
     int arr2[20] = {4,  5, 3,  2, 5,  0,  3, 2, 3, 0, 1, 2, 3, 0,  4,  5,  2, 0,  1};
         Edge: (OB-GR-YO-WR-WG-GO-YB-OW-BW-BR-YR-YG-OB) (Khong lat)
-        Concer: (RBW-RGY-BRY-RWG-OBY-BWR)
-                (WOG-OYG-GWO)
-                (WBO-WBO)
+        Concer: need to recalculate
 
 
 Mat vang truoc
@@ -74,7 +69,7 @@ Edge : (Choose the side of edge in Y interface)
     O3 B7        OB (O: L; T                B: U, B', U'; T)
     W3 G5        WG (W: D2, L2; T           G: R, F', R'; Jb)
     W5 O5        WO (W: D, L2; T            O: B', L, B; T)
-    W7 B5        WB (W: L2, T               B: D, R, F2, R'; Jb)
+    W7 B5        WB (W: L2, T               B: L', R, F, R'; Jb)
     W1 R5        WR (W: D', L2; T           R: F, L', F'; T)
 Edge
 17  YO
@@ -89,3 +84,34 @@ Edge
 40  WG
 48  WO
 34  WB
+
+because if i change the edge in the odd number of change, there are two concers changes.
+edge
+testcase 6: 
+R Y W G
+W R G B
+W O O R
+G B G Y
+R B O Y
+Y B O W
+testcase 5:
+Y O G B 
+R W G Y 
+R W G R 
+O B O W 
+Y B G B
+Y R W O
+testcase 3:
+B O R W 
+Y R W Y
+B G G R
+Y W G O
+B R O Y
+G W O B
+testcase 2:
+O Y W R 
+W G R O
+Y B W G
+O O B B
+B G Y Y
+W R R G

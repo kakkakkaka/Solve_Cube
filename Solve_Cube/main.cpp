@@ -16,7 +16,7 @@ Cube original_Cube = {
         {'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W'}
     }
 };
-Cube input_Cube;
+Cube input_Cube, check_input_Cube;
 
 StandardCube original_StandardCube = Cube_To_Standard(original_Cube);
 StandardCube input_StandardCube;
@@ -29,12 +29,13 @@ int type_method;
 int main() {
     int i, j;
     int num_arr_row, num_arr_col;
-    freopen("test_case/testcase6.txt", "r", stdin);
+    freopen("test_case/testcase2.txt", "r", stdin);
     for (i=0; i<6; i++)
     {
         for (j=0; j<8; j++)
         {
             cin >> input_Cube.color[i][j];
+            check_input_Cube.color[i][j] = input_Cube.color[i][j];
         }
     }
     input_StandardCube = Cube_To_Standard(input_Cube);
@@ -45,8 +46,12 @@ int main() {
         num_arr_col = 0;
         while (arr[i][num_arr_col].c1_color != -1)
         {
-            //cout << input_Cube.color[arr[i][num_arr_col].c1_color][arr[i][num_arr_col].c1_location];
-            //cout << input_Cube.color[arr[i][num_arr_col].c2_color][arr[i][num_arr_col].c2_location] << ' ';
+            // cout << input_Cube.color[arr[i][num_arr_col].c1_color][arr[i][num_arr_col].c1_location];
+            // cout << input_Cube.color[arr[i][num_arr_col].c2_color][arr[i][num_arr_col].c2_location] << '\n';
+            // cout << arr[i][num_arr_col].c1_color << " " << arr[i][num_arr_col].c1_location << " ";
+            // cout << arr[i][num_arr_col].c2_color << " " << arr[i][num_arr_col].c2_location << "\n";
+
+            
             type_method = Apply_Case_Edge(arr[i][num_arr_col], pre_edge, after_edge, num_step_edge);
             // cout << type_method << "\n";
             for (j=0; j<num_step_edge; j++)
@@ -95,7 +100,7 @@ int main() {
             //cout << "hello world\n";
             num_arr_col++;
         }
-        cout << '\n';
+        //cout << '\n';
     }
 
     int check = 1;
@@ -103,9 +108,14 @@ int main() {
     {
         for (j=0; j<8; j++)
         {
-            if (original_Cube.color[i][j] != input_Cube.color[i][j] && j%2 == 1)
+            if (check_input_Cube.color[i][j] != input_Cube.color[i][j] && j%2 == 0)
                 check = 0;
+            if (j%2 == 0)
+            {
+                cout << input_Cube.color[i][j] << ' ';
+            }
         }
+        cout << '\n';
     }
     cout << check;
 

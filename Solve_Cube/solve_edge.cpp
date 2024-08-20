@@ -256,14 +256,14 @@ int Apply_Case_Edge(Edge input_case, StepEdge (&pre), StepEdge (&after), int (&n
                          after.location[2] = 4; after.type[2] = 1; return 3;
         case 20: num = 1;pre.location[0] = 1; pre.type[0] = 2;
                          after.location[0] = 1; after.type[0] = 2; return 3;
-        case 21: num = 4;pre.location[0] = 5; pre.type[0] = 1;
+        case 21: num = 4;pre.location[0] = 1; pre.type[0] = -1;
                          pre.location[1] = 3; pre.type[1] = 1;
-                         pre.location[2] = 2; pre.type[2] = 2;
+                         pre.location[2] = 2; pre.type[2] = 1;
                          pre.location[3] = 3; pre.type[3] = -1;
                          after.location[0] = 3; after.type[0] = 1;
-                         after.location[1] = 2; after.type[1] = 2;
+                         after.location[1] = 2; after.type[1] = -1;
                          after.location[2] = 3; after.type[2] = -1;
-                         after.location[3] = 5; after.type[3] = -1; return 2;
+                         after.location[3] = 1; after.type[3] = 1; return 2;
         case 22: num = 2;pre.location[0] = 5; pre.type[0] = -1;
                          pre.location[1] = 1; pre.type[1] = 2;
                          after.location[0] = 1; after.type[0] = 2;
