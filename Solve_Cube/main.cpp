@@ -33,7 +33,7 @@ int main() {
     int i, j;
     int num_arr_row, num_arr_col;
     int num_arr1_row, num_arr1_col;
-    freopen("test_case/testcase2.txt", "r", stdin);
+    freopen("test_case/testcase4.txt", "r", stdin);
     for (i=0; i<6; i++)
     {
         for (j=0; j<8; j++)
@@ -120,8 +120,14 @@ int main() {
         num_arr1_col = 0;
         while (arr1[i][num_arr1_col].c1_color != -1)
         {
-        
-            type_method = Apply_Case_Concer(arr1[i][num_arr_col], pre_concer, after_concer, num_step_concer);
+            // cout << input_Cube.color[arr1[i][num_arr1_col].c1_color][arr1[i][num_arr1_col].c1_location];
+            // cout << input_Cube.color[arr1[i][num_arr1_col].c2_color][arr1[i][num_arr1_col].c2_location];
+            // cout << input_Cube.color[arr1[i][num_arr1_col].c3_color][arr1[i][num_arr1_col].c3_location] << ' ';
+            // cout << arr[i][num_arr_col].c1_color << " " << arr[i][num_arr_col].c1_location << " ";
+            // cout << arr[i][num_arr_col].c2_color << " " << arr[i][num_arr_col].c2_location << "\n";
+            
+            
+            type_method = Apply_Case_Concer(arr1[i][num_arr1_col], pre_concer, after_concer, num_step_concer);
             // cout << type_method << "\n";
             for (j=0; j<num_step_concer; j++)
             {
@@ -166,7 +172,7 @@ int main() {
             //cout << "hello world\n";
             num_arr1_col++;
         }
-        //cout << '\n';
+        cout << '\n';
     }
 
 

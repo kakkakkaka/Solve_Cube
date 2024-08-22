@@ -63,7 +63,7 @@ int Find_Concer_Loop(Concer (&input_arr)[8][9], Cube original_Cube, Cube input_C
         col = 0;
         while(1)
         {
-            cout << lcolor << other_lcolor << other_lcolor1 << ' ';
+            //cout << lcolor << other_lcolor << other_lcolor1 << ' ';
             //cout << input_StandardCube.concer[local] << ' ';
             if (lcolor == input_Cube.color[arr_Transfer_Concer[local].c1_color][arr_Transfer_Concer[local].c1_location])
             {  
@@ -122,7 +122,11 @@ int Find_Concer_Loop(Concer (&input_arr)[8][9], Cube original_Cube, Cube input_C
                     input_arr[row][col].c3_location = arr_Transfer_Concer[local].c1_location;
                 }
             }
+            // cout << input_arr[row][col].c1_color << input_arr[row][col].c1_location;
+            // cout << input_arr[row][col].c2_color << input_arr[row][col].c2_location;
+            // cout << input_arr[row][col].c3_color << input_arr[row][col].c3_location << ' ';
             col++;
+            
 
             for (i=0; i<12; i++)
             {
@@ -188,7 +192,7 @@ int Find_Concer_Loop(Concer (&input_arr)[8][9], Cube original_Cube, Cube input_C
                 break;
             }
         }
-        cout << '\n';
+        //cout << '\n';
         input_arr[row][col].c1_color = -1;
         input_arr[row][col].c2_color = -1;
         input_arr[row][col].c3_color = -1;
@@ -224,7 +228,7 @@ int Apply_Case_Concer(Concer input_case, StepConcer (&pre), StepConcer (&after),
         {4, 2, 0, 0, 1, 0}, {4, 2, 1, 0, 0, 0}, //YBO
 
         {0, 2, 4, 0, 3, 2}, {0, 2, 3, 2, 4, 0},
-        {4, 0, 0, 2, 3, 2}, {4, 0, 0, 2, 3, 2},
+        {4, 0, 0, 2, 3, 2}, {4, 0, 3, 2, 0, 2},
         {3, 2, 0, 2, 4, 0}, {3, 2, 4, 0, 0, 2}, //YOG
 
         {0, 4, 2, 2, 3, 0}, {0, 4, 3, 0, 2, 2},
