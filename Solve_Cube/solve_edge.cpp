@@ -66,6 +66,7 @@ int Find_Edge_Loop(Edge (&input_arr)[12][13], Cube original_Cube, Cube input_Cub
         while(1)
         {
             //cout << lcolor << other_lcolor << ' ';
+            //cout << input_StandardCube.edge[local] << ' ';
             if (lcolor == input_Cube.color[arr_Transfer_Edge[local].c1_color][arr_Transfer_Edge[local].c1_location])
             {  
                 input_arr[row][col].c1_color = arr_Transfer_Edge[local].c1_color;

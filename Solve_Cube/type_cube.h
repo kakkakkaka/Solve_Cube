@@ -14,6 +14,15 @@ struct Edge {
     int c2_location;
 };
 
+struct Concer {
+    int c1_color;
+    int c1_location;
+    int c2_color;
+    int c2_location;
+    int c3_color;
+    int c3_location;
+};
+
 struct Step {
    int position; //2: Double, 1: ClockWise, -1: Anti
    int status; 
